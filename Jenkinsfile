@@ -6,7 +6,7 @@ node {
 	sh "sudo chown -R python:python /home/python"	
 	// restart the application
 	sh "sudo systemctl stop python-server"
-	sleep(5)
+	sleep(20)
 	sh "sudo systemctl start python-server"
 }
 
