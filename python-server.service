@@ -1,0 +1,10 @@
+[Unit]
+Description=Python HTTP Server
+
+[Service]
+User=python
+WorkingDirectory=/home/python/public
+ExecStart=/home/python/app.py
+
+[Install]
+WantedBy=multi-user.target
