@@ -1,7 +1,10 @@
 node {
-	git 'https://github.com/bob-crutchley/python-http-server'
-	sh "sudo docker-compose down --remove-orphans" 
-	sh "sudo docker-compose build" 
-	sh "sudo docker-compose up -d" 
+	# download it
+	git branch: 'example', url: 'https://github.com/bob-crutchley/python-http-server'
+	# install it
+	sh "sudo cp -r app.py public /home/python"	
+	sh "sudo chown -R python:python /home/python"	
+	# restart the application
+	sh "sudo systemctl restart python-server"
 }
 
