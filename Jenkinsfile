@@ -5,6 +5,8 @@ node {
 	sh "sudo cp -r app.py public /home/python"	
 	sh "sudo chown -R python:python /home/python"	
 	// restart the application
-	sh "sudo systemctl restart python-server"
+	sh "sudo systemctl stop python-server"
+	sleep(5)
+	sh "sudo systemctl start python-server"
 }
 
